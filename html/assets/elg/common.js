@@ -99,19 +99,13 @@ define("elg/common", ["jquery", "mdc"], function ($, mdc) {
                 submitProgress.determinate = false;
                 submitProgress.progress = 0;
             }
-            // var targetUrl = this_.endpointUrl;
-            var targetUrl = "https://r00-06.coreon.com/sparql.json";
+            var targetUrl = this_.endpointUrl;
             if(targetUrl) {
                 $.get(this_.withAuthSettings({
                     method: "GET",
                     url: targetUrl,
                     data: {query: query},
                     dataType: "json",
-                    headers: {
-                        "Content-Type": 'application/json',
-                        "Accept": "application/json",
-                        "X-Core-ApiKey": "VhlkabKlafp3XpyQx-QbeC5vN1KOnuby3ujC3CvV8HqpgJ"
-                    },
                     success: function (respData, textStatus) {
                         if (submitProgress) {
                             submitProgress.close();
