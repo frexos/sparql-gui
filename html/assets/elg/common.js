@@ -2,9 +2,6 @@ define("elg/common", ["jquery", "mdc"], function ($, mdc) {
 
     return (function () {
         function ElgCommon(readyCallback, afterErrorCallback, submitProgress) {
-
-            debugger
-
             var this_ = this;
             this.injectedCss = false;
             this.fetchedDataset = false;
@@ -16,13 +13,7 @@ define("elg/common", ["jquery", "mdc"], function ($, mdc) {
             // Listen to messages from parent window
             window.addEventListener('message', function (e) {
                 if ((window.location.origin === e.origin) && e.data != '') {
-
-
-
                     this_.serviceInfo = JSON.parse(e.data);
-
-                    console.log('logging message from parent window: ', this_.serviceInfo)
-
                     if (!this_.injectedCss) {
                         // inject CSS
                         var elgCss = $('<link type="text/css" rel="stylesheet" media="screen,print">');
