@@ -72,8 +72,6 @@ require(["jquery", "mdc", "elg/common"], function ($, mdc, ElgCommon) {
         $("#submit-form").on('click', function (e) {
             e.preventDefault();
             var query = $('#query').val();
-
-            console.log('query', query)
             // disable the button until the REST call returns
             $('#submit-form').prop('disabled', true);
             $('#query-results').empty();
