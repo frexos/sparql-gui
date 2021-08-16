@@ -2,6 +2,8 @@ define("elg/common", ["jquery", "mdc"], function ($, mdc) {
 
     return (function () {
         function ElgCommon(readyCallback, afterErrorCallback, submitProgress) {
+            console.log('ready steady GO')
+            debugger
             var this_ = this;
             this.injectedCss = false;
             this.fetchedDataset = false;
