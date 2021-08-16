@@ -46,6 +46,7 @@ define("elg/common", ["jquery", "mdc"], function ($, mdc) {
                 $.get(this_.withAuthSettings({
                     url: this_.serviceInfo.DatasetRecordUrl,
                     success: function (metadata, textStatus) {
+                        console.log('metadata', metadata)
                         if (metadata.described_entity &&
                             metadata.described_entity.lr_subclass &&
                             metadata.described_entity.lr_subclass.dataset_distribution &&
